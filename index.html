@@ -26,7 +26,9 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:#1b1124;overflow:hidden}
-body{font-family:'Tajawal','Segoe UI','Noto Naskh Arabic',Tahoma,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+@font-face{font-family:'Sakkal';src:local('Sakkal Majalla'),local('SakkalMajalla');font-weight:400 600;size-adjust:128%}
+@font-face{font-family:'Sakkal';src:local('Sakkal Majalla Bold'),local('SakkalMajalla-Bold'),local('Sakkal Majalla');font-weight:700 900;size-adjust:128%}
+body{font-family:'Sakkal','Tajawal','Segoe UI','Noto Naskh Arabic',Tahoma,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 button,input,select{font:inherit;color:inherit}
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
 #viewport{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(1200px 700px at 70% 0%,#3a2350 0%,#1b1124 70%)}
@@ -351,7 +353,7 @@ table.t{width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
 .kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:0 6px;font-size:11px;background:var(--surface-2);color:var(--ink-2)}
 
 /* tooltip & toast */
-.tip{position:fixed;z-index:100;pointer-events:none;background:var(--pur-dd);color:#fff;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.5;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;max-width:380px;font-family:'Tajawal',Tahoma,sans-serif;direction:rtl}
+.tip{position:fixed;z-index:100;pointer-events:none;background:var(--pur-dd);color:#fff;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.5;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;max-width:380px;font-family:'Sakkal','Tajawal',Tahoma,sans-serif;direction:rtl}
 .tip.on{opacity:1;transform:none}
 .tip b{color:var(--gold)}
 .tip .tr{display:flex;gap:10px;justify-content:space-between;align-items:center}
