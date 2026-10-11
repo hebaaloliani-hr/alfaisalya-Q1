@@ -64,17 +64,20 @@ button,input,select{font:inherit;color:inherit}
 
 /* tabs */
 .tabs{display:flex;align-items:center;gap:6px;padding:0 30px;background:var(--surface);border-bottom:1px solid var(--line);position:relative}
-.tab{position:relative;border:0;background:transparent;padding:0 20px;height:66px;font-size:19px;font-weight:700;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:10px;transition:color .25s}
+.tab{position:relative;border:0;background:transparent;padding:0 13px;height:66px;font-size:17.5px;white-space:nowrap;font-weight:700;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:10px;transition:color .25s}
 .tab i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--pur-l);color:var(--pur);font-size:15px;transition:all .25s}
 .tab:hover{color:var(--ink)}
 .tab[aria-selected=true]{color:var(--pur-d)}
 .tab[aria-selected=true] i{background:var(--pur);color:#fff}
 .tab-ink{position:absolute;bottom:-1px;height:4px;border-radius:4px 4px 0 0;background:var(--gold);transition:all .45s var(--ease)}
 .tabs-sp{flex:1}
-.tbtn{border:1px solid var(--line);background:var(--surface-2);color:var(--pur-d);border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;cursor:pointer;display:flex;gap:8px;align-items:center;transition:all .2s}
+.tbtn{white-space:nowrap;border:1px solid var(--line);background:var(--surface-2);color:var(--pur-d);border-radius:10px;padding:8px 14px;font-weight:700;font-size:15px;cursor:pointer;display:flex;gap:8px;align-items:center;transition:all .2s}
 .tbtn:hover{border-color:var(--pur);background:var(--pur-l)}
 .tbtn[aria-pressed=true]{background:var(--pur);color:#fff;border-color:var(--pur)}
-.ap-bar{position:absolute;bottom:0;right:0;height:3px;background:var(--pur);width:0}
+.vis{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:7px 16px;font-size:15px;font-weight:700;color:var(--ink-2)}
+.vis b{font-size:18px;font-weight:900;color:var(--pur-d);min-width:24px;text-align:center}
+.vis .vsep{width:1px;height:18px;background:var(--line);margin:0 4px}
+.vis.off b{color:var(--muted)}
 
 /* screens */
 #screens{position:relative;overflow:hidden}
@@ -150,6 +153,35 @@ svg text{font-family:inherit}
 .cross{stroke:var(--pur);stroke-width:1.5;stroke-dasharray:4 4;opacity:0;transition:opacity .15s}
 
 /* dims & goals */
+.an2{display:grid;grid-template-columns:600px 1fr;gap:18px;height:100%}
+.an2-l{display:grid;grid-template-rows:auto 1fr;gap:18px;min-height:0}
+.cum{display:grid;grid-template-columns:1fr;gap:6px}
+.cum-top{display:flex;align-items:center;gap:20px}
+.cum .big{font-size:76px;font-weight:900;line-height:1;color:var(--ink)}
+.cum .big small{font-size:32px;color:var(--muted)}
+.cum .how{font-size:14px;color:var(--muted);line-height:1.5;margin-top:8px}
+.qcols{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:end;height:215px;position:relative;margin-top:8px;padding:0 10px}
+.qcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:6px;cursor:pointer}
+.qcol .bar{width:100%;border-radius:10px 10px 4px 4px;height:0;transition:height 1.2s var(--ease);position:relative}
+.qcol .bar.empty{background:repeating-linear-gradient(135deg,#efeaf4 0 6px,#f8f5fb 6px 12px);border:1px dashed #cfc5da}
+.qcol b{font-size:19px;font-weight:900}
+.qcol span{font-size:14px;font-weight:700;color:var(--ink-2);white-space:nowrap}
+.qcol.cur span{color:var(--pur)}
+.cumline{position:absolute;left:0;right:0;border-top:2.5px dashed var(--gold-d);pointer-events:none;transition:bottom 1.2s var(--ease)}
+.cumline em{position:absolute;left:0;top:-24px;font-style:normal;font-size:13px;font-weight:800;color:var(--gold-d);background:var(--surface);padding:0 6px;border-radius:6px}
+table.mx{width:100%;border-collapse:separate;border-spacing:4px;font-size:15px;table-layout:fixed}
+.mx th{font-size:14px;color:var(--muted);font-weight:800;padding:2px 6px;text-align:center}
+.mx th:first-child{text-align:right}
+.mx td{border-radius:8px;text-align:center;padding:5px 4px;font-weight:800;font-variant-numeric:tabular-nums}
+.mx td.lbl{text-align:right;background:none;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:2px}
+.mx td.lbl b{color:var(--c);margin-left:6px}
+.mx td.cumc{background:var(--pur-d)!important;color:#fff}
+.mx td.cumc.na{background:#cfc8d8!important}
+.mx tr.clk{cursor:pointer}
+.mx tr.clk:hover td.lbl{color:var(--pur)}
+.mx td small{display:block;font-size:11px;font-weight:600;opacity:.8}
+.mx .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.krd{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .smap{display:grid;grid-template-rows:auto auto 1fr;gap:12px;height:100%}
 .sm-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
 .sm-h h2{margin:0;font-size:28px;font-weight:900;color:var(--pur-d)}
@@ -370,10 +402,8 @@ tr.flash td{animation:flashBg 2.4s ease}
   <nav class="tabs" id="tabs" role="tablist" aria-label="شاشات اللوحة">
     <span class="tab-ink" id="tab-ink"></span>
     <span class="tabs-sp"></span>
-    <button class="tbtn" type="button" id="btn-auto" aria-pressed="false" title="تنقّل تلقائي بين الشاشات كل 12 ثانية">▶ عرض تلقائي</button>
+    <span class="vis" id="visits" title="عدد الزوار الفريدين وعدد مرات فتح اللوحة المنشورة"><i aria-hidden="true">👁</i><span>الزوار</span><b class="num" id="v-u">—</b><span class="vsep"></span><span>الزيارات</span><b class="num" id="v-t">—</b></span>
     <button class="tbtn" type="button" id="btn-full" title="ملء الشاشة">⛶ ملء الشاشة</button>
-    <button class="tbtn" type="button" id="btn-print" title="طباعة الشاشة الحالية بمقاس 16:9">⎙ طباعة</button>
-    <span class="ap-bar" id="ap-bar"></span>
   </nav>
   <main id="screens"></main>
   <footer class="ft">
@@ -420,7 +450,7 @@ var NAME_DIM={};DIMS.forEach(function(d){NAME_DIM[d.n]=d.k;});
 var QDEF=[{id:'q1',name:'الربع الأول',short:'ر1',months:'يناير – مارس',end:'2026-03-31'},{id:'q2',name:'الربع الثاني',short:'ر2',months:'أبريل – يونيو',end:'2026-06-30'},{id:'q3',name:'الربع الثالث',short:'ر3',months:'يوليو – سبتمبر',end:'2026-09-30'},{id:'q4',name:'الربع الرابع',short:'ر4',months:'أكتوبر – ديسمبر',end:'2026-12-31'}];
 var ST={ok:{t:'تحقق',ic:'✓'},warn:{t:'مقبول',ic:'◐'},bad:{t:'في خطر',ic:'✕'},pp:{t:'مؤجل',ic:'⏸'},na:{t:'لا توجد بيانات',ic:'○'},nd:{t:'لم يحن موعد القياس',ic:'◷'}};
 var ST_ORDER=['ok','warn','bad','pp','nd','na'];
-var SCREENS=[{id:'overview',t:'نظرة عامة',ic:'◉'},{id:'map',t:'الخريطة الاستراتيجية',ic:'◇'},{id:'dims',t:'الأبعاد والأهداف',ic:'▦'},{id:'kpis',t:'مؤشرات الأداء',ic:'▤'},{id:'depts',t:'الإدارات',ic:'◧'},{id:'analysis',t:'التحليل والتوصيات',ic:'✎'},{id:'inits',t:'المبادرات',ic:'◫'}];
+var SCREENS=[{id:'overview',t:'نظرة عامة',ic:'◉'},{id:'annual',t:'الأداء السنوي',ic:'↗'},{id:'map',t:'الخريطة الاستراتيجية',ic:'◇'},{id:'dims',t:'الأبعاد والأهداف',ic:'▦'},{id:'kpis',t:'مؤشرات الأداء',ic:'▤'},{id:'depts',t:'الإدارات',ic:'◧'},{id:'analysis',t:'التحليل والتوصيات',ic:'✎'},{id:'inits',t:'المبادرات',ic:'◫'}];
 var POLL_MS=2000,AUTO_MS=12000;
 var TODAY=new Date();
 
@@ -557,7 +587,7 @@ function placeInk(){var b=document.querySelector('.tab[aria-selected=true]'),ink
 function render(opts){opts=opts||{};
   renderQseg();
   document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',String(t.getAttribute('data-screen')===STATE.screen));});placeInk();
-  var fn={map:scrMap,overview:scrOverview,dims:scrDims,kpis:scrKPIs,depts:scrDepts,analysis:scrAnalysis,inits:scrInits}[STATE.screen]||scrOverview;
+  var fn={annual:scrAnnual,map:scrMap,overview:scrOverview,dims:scrDims,kpis:scrKPIs,depts:scrDepts,analysis:scrAnalysis,inits:scrInits}[STATE.screen]||scrOverview;
   var m=$('screens');var keepScroll=opts.keep?Array.prototype.map.call(m.querySelectorAll('[data-keep]'),function(x){return [x.getAttribute('data-keep'),x.scrollTop];}):[];
   m.innerHTML='<section class="screen on" data-s="'+STATE.screen+'"'+(opts.still?' style="animation:none"':'')+'>'+fn()+'</section>';
   keepScroll.forEach(function(p){var el=m.querySelector('[data-keep="'+p[0]+'"]');if(el)el.scrollTop=p[1];});
@@ -622,6 +652,31 @@ function trendSVG(){var W=830,H=300,padR=50,padL=60,padT=26,padB=40;var Q=DATA.Q
   return s+'</svg>';}
 
 
+
+/* ---- annual (cumulative) ---- */
+function cumOf(vals){var v=vals.filter(function(x){return x!=null;});return v.length?{v:v.reduce(function(a,b){return a+b;},0)/v.length,n:v.length}:{v:null,n:0};}
+function mxCell(v,s,cur){var st=v!=null?perfClass(v):s;var bg='var(--'+st+'-bg)',fg='var(--'+st+')';return '<td style="background:'+bg+';color:'+fg+(cur?';box-shadow:inset 0 0 0 2px var(--gold)':'')+'">'+(v!=null?fmtP(v):'<span style="font-size:13px">'+ST[s].ic+'</span>')+'</td>';}
+function scrAnnual(){var Q=DATA.Q,qv=Q.map(function(q){return qPerf(q).v;}),C=cumOf(qv),pc=perfClass(C.v);
+  var kc={},measuredReadings=0;Q.forEach(function(q){q.kpis.forEach(function(k){var s=kstat(k,q);if(s==='nd')return;kc[s]=(kc[s]||0)+1;});});
+  var h='<div class="an2"><div class="an2-l">';
+  h+='<section class="card rise"><h3>النتيجة التراكمية لعام 2026<span class="sub">متوسط نتائج الأرباع المُقاسة من ملف Excel</span></h3><div class="cum"><div class="cum-top">'+
+    (C.v!=null?'<div class="big num"><span data-count="'+r1(C.v*100)+'" data-dec="1">0</span><small>%</small></div><div>'+pill(pc,pc==='bad'?'يحتاج متابعة':ST[pc].t)+'</div>':'<div class="big" style="font-size:34px">لا توجد بيانات</div>')+
+    '<div class="how" style="margin:0">محسوبة من '+(C.n===1?'ربع واحد':C.n===2?'ربعين':C.n+' أرباع')+' من 4 · '+(C.n<4?'تكتمل بعد قياس '+Q.filter(function(q,i){return qv[i]==null;}).map(function(q){return q.name;}).join(' و'):'السنة مكتملة')+'</div></div>';
+  var maxH=150;h+='<div class="qcols">';
+  Q.forEach(function(q,i){var v=qv[i],s=v!=null?perfClass(v):(qEnded(q)?'na':'nd');h+='<div class="qcol'+(q.id===STATE.q?' cur':'')+'" data-q="'+q.id+'" data-tip="<b>'+esc(q.name)+'</b><br>'+(v!=null?fmtP(v)+' · '+(qPerf(q).src==='off'?'من جدول متوسط أداء الربع':'محسوبة'):ST[s].t)+'<br>اضغطي لعرض الربع"><b class="num" style="color:var(--'+s+')">'+(v!=null?fmtP(v):ST[s].ic)+'</b><div class="bar'+(v==null?' empty':'')+'" style="'+(v!=null?'background:'+statusVar(s):'')+'" data-h="'+(v!=null?Math.max(6,v*maxH):maxH*0.35)+'px"></div><span>'+esc(q.name)+'</span></div>';});
+  if(C.v!=null)h+='<div class="cumline" style="bottom:'+(27+C.v*maxH)+'px"><em>التراكمي <bdi>'+fmtP(C.v)+'</bdi></em></div>';
+  h+='</div></div><div class="krd">'+['ok','warn','bad','pp','na'].filter(function(s){return kc[s];}).map(function(s){return pill(s,ST[s].t+' '+kc[s]);}).join('')+'<span class="muted" style="font-size:13px;align-self:center">قراءات المؤشرات في الأرباع المُقاسة</span></div></section>';
+  // dims matrix
+  h+='<section class="card rise" style="animation-delay:.1s"><h3>الأبعاد عبر الأرباع<span class="sub">التراكمي = متوسط الأرباع المُقاسة</span></h3><table class="mx"><colgroup><col style="width:30%">'+'<col>'.repeat(5)+'</colgroup><thead><tr><th>البعد</th>'+Q.map(function(q){return '<th>'+esc(q.name.replace('الربع ',''))+'</th>';}).join('')+'<th>التراكمي</th></tr></thead><tbody>';
+  DIMS.forEach(function(dd){var vals=Q.map(function(q){return dPerf(q,dd.k).v;}),c=cumOf(vals);
+    h+='<tr class="clk" data-godim="'+dd.k+'"><td class="lbl"><span class="dot" style="background:var(--d-'+dd.k+')"></span>'+esc(dd.n)+'</td>'+Q.map(function(q,i){return mxCell(vals[i],qEnded(q)?'na':'nd',q.id===STATE.q);}).join('')+'<td class="cumc'+(c.v==null?' na':'')+'">'+(c.v!=null?fmtP(c.v):'—')+'</td></tr>';});
+  h+='</tbody></table></section></div>';
+  // goals matrix
+  h+='<section class="card rise" style="animation-delay:.18s;display:flex;flex-direction:column;min-height:0"><h3>الأهداف الاستراتيجية عبر الأرباع<span class="sub">النسبة لكل ربع من جدول الأهداف في Excel · اضغطي على الهدف لتفاصيله</span></h3><div style="overflow:auto;min-height:0;scrollbar-width:thin"><table class="mx" style="font-size:14.5px"><colgroup><col style="width:42%">'+'<col>'.repeat(5)+'</colgroup><thead><tr><th>الهدف</th>'+Q.map(function(q){return '<th>'+esc(q.name)+'</th>';}).join('')+'<th>التراكمي</th></tr></thead><tbody>';
+  DATA.GOALS.forEach(function(g){var vals=Q.map(function(q){return gPerfVal(q.gmap[g.c],q);}),c=cumOf(vals);
+    h+='<tr class="clk" data-goal="'+esc(g.c)+'" title="'+esc(g.n)+(c.n?' · التراكمي من '+(c.n===1?'ربع واحد':c.n===2?'ربعين':c.n+' أرباع'):'')+'"><td class="lbl" style="--c:var(--d-'+g.d+')"><b>'+esc(g.c)+'</b>'+esc(g.n)+'</td>'+Q.map(function(q,i){return mxCell(vals[i],gstat(q.gmap[g.c],q),q.id===STATE.q);}).join('')+'<td class="cumc'+(c.v==null?' na':'')+'">'+(c.v!=null?fmtP(c.v):'مؤجل')+'</td></tr>';});
+  h+='</tbody></table></div><div class="legend" style="margin-top:8px">'+['ok','warn','bad','pp','nd'].map(function(s){return '<span class="pill p-'+s+'" style="font-size:13px">'+ST[s].ic+' '+ST[s].t+'</span>';}).join('')+'<span class="muted" style="font-size:13px;align-self:center">الإطار الذهبي = الربع المختار</span></div></section></div>';
+  return h;}
 /* ---- strategy map ---- */
 var DIM_HEAD={s:'#603c7f',m:'#977021',sh:'#4a9aaa',l:'#5a7fc4',t:'#5e9e6e'};
 function scrMap(){var q=curQ(),I=ASSETS.identity||{};var P=qPerf(q);
@@ -741,7 +796,7 @@ function wireScreen(m){var tr=m.querySelector('#trend');if(tr){tr.innerHTML=tren
   tr.querySelectorAll('[data-xhair]').forEach(function(r){r.addEventListener('mouseenter',function(){var x=+r.getAttribute('x')+60;xh.setAttribute('x1',x);xh.setAttribute('x2',x);xh.style.opacity=1;});r.addEventListener('mouseleave',function(){xh.style.opacity=0;});});}}
 document.addEventListener('click',function(e){var t=e.target;
   var el;
-  if((el=t.closest('[data-q]'))&&(el.closest('#qseg')||el.closest('#trend'))){setQ(el.getAttribute('data-q'));return;}
+  if((el=t.closest('[data-q]'))&&(el.closest('#qseg')||el.closest('#trend')||el.classList.contains('qcol'))){setQ(el.getAttribute('data-q'));return;}
   if((el=t.closest('[data-screen]'))){stopAuto();go(el.getAttribute('data-screen'));return;}
   if(t.closest('#panel')&&!t.closest('[data-kpi],[data-goal],[data-agoal-go]')&&!t.closest('#p-x'))return;
   if((el=t.closest('[data-kpi]'))){openKPI(el.getAttribute('data-kpi'));return;}
@@ -774,15 +829,10 @@ document.addEventListener('keydown',function(e){
 });
 function setQ(id){if(!DATA.Q.some(function(q){return q.id===id;}))return;STATE.q=id;render();}
 $('scrim').addEventListener('click',closePanel);$('p-x').addEventListener('click',closePanel);
-$('btn-print').addEventListener('click',function(){window.print();});
 $('btn-full').addEventListener('click',function(){var d=document.documentElement;if(!document.fullscreenElement){(d.requestFullscreen||d.webkitRequestFullscreen||function(){}).call(d);}else{(document.exitFullscreen||document.webkitExitFullscreen).call(document);}});
 
 /* ════════ autoplay ════════ */
-var AUTO=null,_apT0=0,_apRaf=null;
-function startAuto(){stopAuto();$('btn-auto').setAttribute('aria-pressed','true');$('btn-auto').textContent='❚❚ إيقاف العرض';_apT0=performance.now();AUTO=setInterval(function(){var i=SCREENS.findIndex(function(s){return s.id===STATE.screen;});STATE.screen=SCREENS[(i+1)%SCREENS.length].id;render();_apT0=performance.now();},AUTO_MS);
-  (function tick(){var k=Math.min(1,(performance.now()-_apT0)/AUTO_MS);$('ap-bar').style.width=(k*100)+'%';_apRaf=requestAnimationFrame(tick);})();}
-function stopAuto(){if(AUTO){clearInterval(AUTO);AUTO=null;}if(_apRaf)cancelAnimationFrame(_apRaf);$('ap-bar').style.width='0';$('btn-auto').setAttribute('aria-pressed','false');$('btn-auto').textContent='▶ عرض تلقائي';}
-$('btn-auto').addEventListener('click',function(){if(AUTO)stopAuto();else startAuto();});
+function stopAuto(){}
 
 /* ════════ live Excel link ════════ */
 var LIVE={handle:null,last:null,size:null,timer:null,state:'embedded',busy:false,err:null};
@@ -849,10 +899,20 @@ document.addEventListener('click',function(e){if(!e.target.closest('#pop')&&!e.t
   else if(a==='unlink'){stopPoll();LIVE.handle=null;idbDel('handle');setLive('embedded','غير مرتبط','تُعرض آخر بيانات قُرئت');renderPop();}
   else if(a==='embed'){stopPoll();LIVE.handle=null;idbDel('handle');loadEmbedded(true);renderPop();}});
 
+
+/* ════════ visitor counter (published copy on GitHub Pages) ════════ */
+var VIS_NS='alfaisalya-strategic-dashboard-2026',VIS_API='https://abacus.jasoncameron.dev/';
+function visitorsInit(){var counting=/\.github\.io$/i.test(location.hostname),first=false;
+  try{first=!localStorage.getItem('faisalya_seen_v1');if(first&&counting)localStorage.setItem('faisalya_seen_v1',String(Date.now()));}catch(e){first=false;}
+  function call(key,hit){return fetch(VIS_API+(hit?'hit/':'get/')+VIS_NS+'/'+key,{cache:'no-store'}).then(function(r){if(r.status===404)return {value:0};if(!r.ok)throw new Error(r.status);return r.json();}).then(function(j){return +j.value||0;});}
+  Promise.all([call('visitors',counting&&first),call('visits',counting)]).then(function(v){
+    var u=$('v-u'),t=$('v-t');u.setAttribute('data-count',v[0]);t.setAttribute('data-count',v[1]);countUp($('visits'));
+    $('visits').title='الزوار الفريدون: '+v[0]+' · مرات فتح اللوحة: '+v[1]+(counting?'':' (لا تُحتسب الزيارة عند فتح الملف من الجهاز)');
+  }).catch(function(){$('visits').classList.add('off');$('visits').title='عدّاد الزوار غير متاح حالياً';});}
 /* ════════ boot ════════ */
 function b64ToBuf(b){var s=atob(b),u=new Uint8Array(s.length);for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u.buffer;}
 function loadEmbedded(ann){applyParsed(parseWorkbook(b64ToBuf(EMBED_XLSX)),{kind:'embedded',name:EMBED_NAME},ann);setLive('embedded','بيانات مضمّنة',FS_OK?'اربطي ملف Excel للمراقبة المباشرة':'المراقبة المباشرة تتطلب Chrome أو Edge');}
-fit();renderTabs();
+fit();renderTabs();visitorsInit();
 if(typeof XLSX==='undefined'){$('screens').innerHTML='<div class="empty">تعذّر تحميل مكتبة قراءة Excel.</div>';}
 else{loadEmbedded(false);
   if(FS_OK)idbGet('handle').then(function(h){if(!h)return;LIVE.handle=h;h.queryPermission({mode:'read'}).then(function(p){if(p==='granted'){readHandle(true).then(startPoll);}else setLive('paused','المراقبة متوقفة','الملف «'+h.name+'» مرتبط · اضغطي «استئناف المراقبة»');}).catch(function(){});});}
